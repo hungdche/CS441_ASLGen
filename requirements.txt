@@ -1,0 +1,8 @@
+torch
+torchaudio
+torchvision
+numpy
+opencv-python
+tqdm
+Pillow
+natsort
