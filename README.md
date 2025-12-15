@@ -1,5 +1,7 @@
 # ASL Gen: American Sign Language Hand Pose Generation/Detection
 
+![Demo](generated_gif/teaser.gif)
+
 ## Installation 
 
 1. Clone the repo
@@ -45,5 +47,16 @@
     Postprocessed images will be saved in `output/`
 
 
-## Running the code
+## Running the code/training the models
 All of the code are outlined in `aslgen.ipynb`. Follow through with the code and enjoy. 
+
+## Applications
+To run the desired application:
+```
+python app.py \
+    --alphabet <the letter you want to learn> \
+    --ckpt <path to the classification .pt> \
+```
+
+## Acknowledgement
+I modified  `DiffAugment` function from [`data-efficient-gan`](https://github.com/mit-han-lab/data-efficient-gans). 

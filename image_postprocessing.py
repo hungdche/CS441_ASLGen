@@ -15,7 +15,7 @@ output_folder = "output/"   # folder to save segmented hands
 os.makedirs(output_folder, exist_ok=True)
 
 # Load SAM model (choose appropriate model type)
-checkpoint = "<path to checkpoint>"
+checkpoint = "checkpoints/sam2.1_hiera_large.pt"
 model_cfg = "configs/sam2.1/sam2.1_hiera_l.yaml"
 predictor = SAM2ImagePredictor(build_sam2(model_cfg, checkpoint))
 
@@ -43,8 +43,6 @@ def segment_hand(image_path):
 subfolders = [f.path for f in os.scandir(input_folder) if f.is_dir()]
 for subfolder in subfolders:
     subfolder_name = os.path.basename(subfolder)
-    if int(subfolder_name) <= 3:
-        continue
     output_subfolder = os.path.join(output_folder, subfolder_name)
     os.makedirs(output_subfolder, exist_ok=True)
     

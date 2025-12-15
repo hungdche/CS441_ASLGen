@@ -8,7 +8,7 @@ def find_hand_bounding_box(image, results):
     '''
     compute a square bounding box around the detected hand landmarks with padding.
     '''
-    
+    PADDING = 40
     if not results.multi_hand_landmarks:
         return None
     
